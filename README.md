@@ -1,6 +1,6 @@
-# Code Pass
+# Osobola
 
-Code Pass is a responsive landing page for a practical AI assisted coding course. It is built with Next.js App Router, TypeScript, Tailwind CSS, Motion, and Lucide React.
+Osobola is a responsive landing page for a practical AI assisted coding course. It is built with Next.js App Router, TypeScript, Tailwind CSS, Motion, and Lucide React.
 
 ## Run locally
 
@@ -20,7 +20,7 @@ npm run build
 ## Configure before launch
 
 - Set `NEXT_PUBLIC_SITE_URL` to the canonical production URL. See `.env.example`.
-- Replace the example `hello@codepass.example` contact address in `app/page.tsx`.
+- Replace the example `hello@osobola.example` contact address in `app/page.tsx`.
 - Add the real enrollment destination and any course pricing when those are available.
 - Replace the privacy and terms contact links with the published policy pages when they exist.
 

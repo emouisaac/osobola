@@ -116,3 +116,25 @@
 .theme-toggle:focus-visible{outline:2px solid #9dacff;outline-offset:3px}
 .mobile-theme-toggle{width:100%;justify-content:flex-start;margin-top:4px;padding:11px 10px;border:0;background:transparent;color:#c3cad7;font-size:13px}
 .mobile-theme-toggle:hover{background:#192233}
+
+/* A slow moving aurora gives the landing hero a live, atmospheric backdrop. */
+.hero:before{z-index:0;height:100%;background:radial-gradient(ellipse 42% 48% at 76% 34%,#536be34d,transparent 72%),radial-gradient(ellipse 36% 42% at 15% 12%,#2c9c9270,transparent 74%),radial-gradient(ellipse 42% 44% at 54% 90%,#8062c526,transparent 76%);background-size:145% 145%;animation:aurora-drift 22s ease-in-out infinite alternate;pointer-events:none}
+.hero:after{content:"";position:absolute;z-index:0;inset:0 0 auto;height:100%;background-image:linear-gradient(#b9c9ff0a 1px,transparent 1px),linear-gradient(90deg,#b9c9ff0a 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,#000 0%,transparent 90%);pointer-events:none}
+.hero-grid,.trust-row{position:relative;z-index:1}
+@keyframes aurora-drift{0%{background-position:0% 0%;filter:hue-rotate(0deg)}50%{background-position:65% 28%;filter:hue-rotate(13deg)}100%{background-position:100% 70%;filter:hue-rotate(-10deg)}}
+:root[data-theme="light"] .hero:before{background:radial-gradient(ellipse 42% 48% at 76% 34%,#8999ef66,transparent 72%),radial-gradient(ellipse 36% 42% at 15% 12%,#69c2b074,transparent 74%),radial-gradient(ellipse 42% 44% at 54% 90%,#aa8bdf38,transparent 76%)}
+:root[data-theme="light"] .hero:after{background-image:linear-gradient(#455f9510 1px,transparent 1px),linear-gradient(90deg,#455f9510 1px,transparent 1px)}
+@media(prefers-reduced-motion:reduce){.hero:before{animation:none}}
+
+/* Replace geometric grid textures with soft, organic light. */
+.hero:after{background-image:radial-gradient(ellipse at 50% 50%,#6476d51a,transparent 68%),linear-gradient(115deg,transparent 25%,#8ce6d811 50%,transparent 75%);background-size:100% 100%,220% 100%;mask-image:radial-gradient(ellipse at 55% 30%,#000 0%,transparent 78%);animation:ambient-sweep 20s ease-in-out infinite alternate}
+.video-card:before{background:radial-gradient(ellipse at 50% 55%,#aebaff24,transparent 64%),radial-gradient(ellipse at 80% 10%,#8ce6d810,transparent 45%)}
+.final-cta:before{background:radial-gradient(ellipse at 50% 90%,#aebaff18,transparent 66%),radial-gradient(ellipse at 90% 10%,#8ce6d810,transparent 46%)}
+:root[data-theme="light"] .hero:after{background-image:radial-gradient(ellipse at 50% 50%,#8193de18,transparent 68%),linear-gradient(115deg,transparent 25%,#59b7a711 50%,transparent 75%)}
+:root[data-theme="light"] .final-cta:before{background-image:radial-gradient(ellipse at 50% 90%,#8193de16,transparent 66%),radial-gradient(ellipse at 90% 10%,#59b7a70c,transparent 46%)}
+.hero-float-line{display:inline-block;animation:hero-float 6s ease-in-out infinite}
+.hero-float-middle{animation-delay:-1.8s}
+.hero-float-last{animation-delay:-3.6s}
+@keyframes hero-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes ambient-sweep{from{background-position:0% 0%,0% 50%}to{background-position:100% 100%,100% 50%}}
+@media(prefers-reduced-motion:reduce){.hero:after,.hero-float-line{animation:none}}
