@@ -1,35 +1,41 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
 
 type ThemeToggleProps = { mobile?: boolean };
 
+function subscribe(onStoreChange: () => void) {
+  window.addEventListener("storage", onStoreChange);
+  window.addEventListener("osobola-theme-change", onStoreChange);
+
+  return () => {
+    window.removeEventListener("storage", onStoreChange);
+    window.removeEventListener("osobola-theme-change", onStoreChange);
+  };
+}
+
+function getSnapshot() {
+  try {
+    return window.localStorage.getItem("osobola-theme") === "light";
+  } catch {
+    return false;
+  }
+}
+
+function getServerSnapshot() {
+  return false;
+}
+
 export default function ThemeToggle({ mobile = false }: ThemeToggleProps) {
-  const [lightMode, setLightMode] = useState(false);
+  const lightMode = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   useEffect(() => {
-    try {
-      const savedTheme = window.localStorage.getItem("osobola-theme");
-      if (savedTheme === "light") {
-        setLightMode(true);
-        document.documentElement.dataset.theme = "light";
-      }
-    } catch {
-      // Keep the default dark theme when storage is unavailable.
-    }
-
-    const syncTheme = (event: Event) => {
-      setLightMode((event as CustomEvent<boolean>).detail);
-    };
-
-    window.addEventListener("osobola-theme-change", syncTheme);
-    return () => window.removeEventListener("osobola-theme-change", syncTheme);
-  }, []);
+    document.documentElement.dataset.theme = lightMode ? "light" : "dark";
+  }, [lightMode]);
 
   function toggleTheme() {
     const nextTheme = !lightMode;
-    setLightMode(nextTheme);
     document.documentElement.dataset.theme = nextTheme ? "light" : "dark";
 
     try {

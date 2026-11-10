@@ -1,14 +1,19 @@
-# Osobola Course 1 — Welcome
+# Osobola Course 1 - Welcome
 
-Open `index.html` in a modern browser to present the nine-slide introduction. The deck is self-contained and works offline.
+Open `index.html` in a modern browser to present the introduction. The deck is self-contained and works offline.
 
-Use **Presenter view** to switch to a separate narration layout. On desktop, the slide text and narration sit in separate columns; on mobile, the narration has its own panel below the slide. The script follows the supplied wording and updates as you move through the deck.
+Choose **Whiteboard drawings** to open the companion narration sequence. It contains 19 animated scenes timed to the supplied male narrator recording. The board fills the browser window, with narration, controls, and scene overview kept inside the frame. Click **Play** to start the drawing and narrator; refreshing the page does not start the animation. Words are bolded as the narrator reaches them.
 
-## Controls
+Each scene has its own narrator clip in `audio/scenes/scene-01.wav` through `scene-19.wav`. The whiteboard loads only the current scene's clip, so each caption and drawing has a matching narration segment. The original recording is kept at `audio/osobola-audio-1.mp3`.
 
-- **Right arrow**, **Space**, or **Page Down**: next slide
-- **Left arrow** or **Page Up**: previous slide
-- **Home / End**: first / last slide
-- Use the slide grid for direct navigation, or the full-screen button for presenting.
-- Use **Presenter view** to show or hide the current slide’s speaker text; press **Escape** to close it.
-- On touch screens, swipe left or right to move between slides.
+## Whiteboard controls
+
+- **Next / Previous** or the **arrow keys**: move between scenes
+- **Space**: replay the current drawing
+- **Listen / Pause / Resume**: play the current scene's narration
+- **Play / Pause**: move through the scenes with the matching narrator audio
+- **Scene overview**: jump directly to any scene
+- **Full screen**: enter or exit browser fullscreen
+- **Home / End**: first / last scene
+
+The whiteboard page is a standalone HTML file and does not depend on the decorative PNG illustrations in the `screens` folder.
