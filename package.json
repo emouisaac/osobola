@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/sync-course-assets.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/sync-course-assets.mjs",
     "build": "next build",
+    "prestart": "node scripts/sync-course-assets.mjs",
     "start": "next start",
     "lint": "eslint app",
     "typecheck": "tsc --noEmit"

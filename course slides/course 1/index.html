@@ -29,6 +29,32 @@
     @media(max-width:850px){.slide{grid-template-columns:1fr .72fr;gap:18px;padding-inline:6vw}.title{font-size:clamp(38px,6vw,60px)}.visual{width:min(100%,390px)}.course-tag{display:none}.slide:before{right:-24%}.slide:after{right:-15%}.hero-card{padding:18px}.hero-card h3{font-size:22px}.stage.narration-mode{grid-template-columns:minmax(0,1fr) minmax(270px,.8fr)}.stage.narration-mode .slide.active{padding-inline:5vw}.stage.narration-mode .narration-panel{margin:22px 22px 22px 8px;padding:21px}}
     @media(max-width:620px){.deck{grid-template-rows:56px 1fr 64px}.topbar,.bottombar{padding-inline:18px}.brand{font-size:13px}.top-actions .icon-btn:first-child{display:none}.slide{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:9px;padding:28px 25px 22px}.copy{max-width:none}.eyebrow{margin-bottom:13px;font-size:9px}.title{font-size:clamp(37px,10vw,54px);margin-bottom:15px}.lead{font-size:15px;line-height:1.5}.support{font-size:12px;margin-top:9px}.quote{margin-top:16px;font-size:13px}.chips{margin-top:17px}.chip{padding:7px 10px;font-size:10px}.visual{width:min(66vw,260px);aspect-ratio:1;margin:3px auto 0;flex:none}.slide:before{width:390px;height:390px;right:50%;top:auto;bottom:-18%;transform:translateX(50%)}.slide:after{width:300px;height:300px;right:50%;top:auto;bottom:-8%;transform:translateX(50%)}.hero-card{width:76%;padding:15px;border-radius:17px}.hero-card h3{font-size:18px;margin:9px 0 5px}.hero-card p{font-size:9px}.mini-window{margin-top:11px}.window-content{padding:9px}.orbit-card{padding:9px 10px;font-size:9px}.orbit-card strong{font-size:10px}.orbit-card small{font-size:8px}.tool-stack{width:88%;gap:8px}.tool{padding:10px;border-radius:12px;gap:9px}.tool-icon{width:32px;height:32px;border-radius:9px}.tool-text strong{font-size:11px}.tool-text small{font-size:8px}.path-visual{width:92%;height:70%;padding:8% 0}.path-step{padding:10px;width:86%}.path-step strong{font-size:10px}.path-step small{font-size:8px}.owner-visual{height:68%}.site-card{width:90%;height:70%}.site-headline{font-size:14px}.control-wheel{transform:scale(.82)}.wheel-note{font-size:8px}.lesson-visual{height:65%}.lesson-board{width:90%;padding:14px}.lesson-board h3{font-size:12px}.lesson-row{font-size:9px;padding:8px 0}.lesson-chip{font-size:8px}.progress-wrap{max-width:none;margin:0 12px}.hint{display:none}.nav-btn{width:34px;height:34px}.counter{font-size:9px}.stage.narration-mode{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;gap:0;background:var(--bg)}.stage.narration-mode .slide.active{grid-column:1;grid-row:1;display:grid;grid-template-columns:1fr;align-content:center;justify-content:stretch;gap:9px;padding:20px 24px;overflow-y:auto}.stage.narration-mode .slide.active .copy{max-width:none}.stage.narration-mode .narration-panel{grid-column:1;grid-row:2;max-height:min(29vh,220px);margin:0 14px 10px;padding:13px 15px;border-radius:15px}.stage.narration-mode .narration-head{margin-bottom:5px}.stage.narration-mode .narration-text{font-size:12px;line-height:1.55}.stage.narration-mode .narration-title{font-size:11px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  :root[data-theme="light"]{color-scheme:light;--ink:#172033;--muted:#596579;--bg:#f6f8fc;--panel:#fff;--line:#dce3ee;--lime:#4d64d7;--cyan:#208d83;--violet:#7552c6;--orange:#b7673a}
+:root[data-theme="light"] body{background:var(--bg);color:var(--ink)}
+:root[data-theme="light"] .deck{background:radial-gradient(ellipse at 75% 45%,#dce4f566,transparent 46%),var(--bg)}
+:root[data-theme="light"] .topbar,:root[data-theme="light"] .bottombar{border-color:var(--line)}
+:root[data-theme="light"] .course-tag,:root[data-theme="light"] .support,:root[data-theme="light"] .quote small,:root[data-theme="light"] .narration-count,:root[data-theme="light"] .hint{color:var(--muted)}
+:root[data-theme="light"] .icon-btn,:root[data-theme="light"] .nav-btn{color:#39465b;border-color:#d4dcea;background:#fff}
+:root[data-theme="light"] .icon-btn:hover,:root[data-theme="light"] .nav-btn:hover{color:#4057b1;border-color:#aab8dc;background:#edf2ff}
+:root[data-theme="light"] .storyboard-link{color:#263249}
+:root[data-theme="light"] .slide:before,:root[data-theme="light"] .slide:after{border-color:#455f9512}
+:root[data-theme="light"] .lead,:root[data-theme="light"] .quote{color:#3d485c}
+:root[data-theme="light"] .chip{color:#39465b;border-color:#d8e0eb;background:#fff}
+:root[data-theme="light"] .hero-card,:root[data-theme="light"] .orbit-card,:root[data-theme="light"] .tool,:root[data-theme="light"] .path-step,:root[data-theme="light"] .site-card,:root[data-theme="light"] .lesson-board{color:var(--ink);border-color:var(--line);background:linear-gradient(145deg,#fff,#f1f4fa);box-shadow:0 18px 45px #28395716}
+:root[data-theme="light"] .hero-card h3,:root[data-theme="light"] .orbit-card strong,:root[data-theme="light"] .tool-text strong,:root[data-theme="light"] .path-step strong,:root[data-theme="light"] .site-headline,:root[data-theme="light"] .lesson-board h3{color:#172033}
+:root[data-theme="light"] .hero-card p,:root[data-theme="light"] .orbit-card small,:root[data-theme="light"] .tool-text small,:root[data-theme="light"] .path-step small,:root[data-theme="light"] .site-copy,:root[data-theme="light"] .lesson-row{color:#596579}
+:root[data-theme="light"] .mini-window,:root[data-theme="light"] .window-content,:root[data-theme="light"] .tool-icon,:root[data-theme="light"] .path-num,:root[data-theme="light"] .wheel-center,:root[data-theme="light"] .wheel-node{border-color:#d8e0eb;background:#edf1f8;color:#4057b1}
+:root[data-theme="light"] .line{background:#d7deea}
+:root[data-theme="light"] .line.bright{background:#8c9bd3}
+:root[data-theme="light"] .site-top{border-color:#dce3ee;background:#f5f7fb}
+:root[data-theme="light"] .narration-panel{border-color:#d8e0eb;background:#fffffff2;box-shadow:0 22px 65px #26365320}
+:root[data-theme="light"] .narration-text{color:#344156}
+:root[data-theme="light"] .stage.narration-mode{background:linear-gradient(90deg,transparent 0 57%,#edf1f8 57% 100%)}
+:root[data-theme="light"] #overviewPanel{background:#f6f8fcf2!important}
+:root[data-theme="light"] #overviewGrid button{color:#263249!important;border-color:#d8e0eb!important;background:#fff!important}
+:root[data-theme="light"] .progress{background:#dce3ee}
+@media(max-width:620px){.top-actions #narrationToggle{width:36px;padding:0;justify-content:center}.top-actions #narrationToggle span{display:none}}
+   .storyboard-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-weight:800;white-space:nowrap}.storyboard-link strong{font-weight:850}.storyboard-link svg{width:14px;height:14px;fill:currentColor;stroke:currentColor;stroke-width:2.6}
   </style>
 </head>
 <body>
@@ -38,9 +64,10 @@
       <div class="course-tag"><b>COURSE 01</b><span>AI-assisted website building</span></div>
       <div class="top-actions">
         <button class="icon-btn" id="overview" aria-label="Show slide overview" title="Slide overview"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button>
-        <a class="icon-btn storyboard-link" href="screens.html" title="Open the animated whiteboard drawings" aria-label="Open the animated whiteboard drawings">Whiteboard drawings</a>
+        <a class="icon-btn storyboard-link" href="screens.html?autoplay=1" title="Play the narrated course video" aria-label="Play the narrated course video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><strong>Play video</strong></a>
         <button class="icon-btn" id="narrationToggle" aria-label="Show presenter narration" aria-expanded="false" title="Presenter view"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 5.5v15M8 7h8M8 10h8"/></svg><span>Presenter view</span></button>
         <button class="icon-btn" id="fullscreen" aria-label="Enter full screen" title="Full screen"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m13-5h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3"/></svg></button>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch to light mode"></button>
       </div>
     </header>
     <div class="stage" id="stage" aria-live="polite">
@@ -87,6 +114,12 @@
   </main>
   <script>
     (()=>{
+      const themeToggle=document.getElementById('themeToggle'),sunIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>',moonIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 15.3A8.6 8.6 0 0 1 8.7 3.6 8.7 8.7 0 1 0 20.4 15.3z"/></svg>';
+      function applyTheme(theme,save=false){const light=theme==='light';document.documentElement.dataset.theme=light?'light':'dark';themeToggle.innerHTML=light?moonIcon:sunIcon;themeToggle.setAttribute('aria-label',`Switch to ${light?'dark':'light'} mode`);themeToggle.title=`Switch to ${light?'dark':'light'} mode`;document.querySelector('meta[name="theme-color"]').content=light?'#f6f8fc':'#080b12';if(save){try{localStorage.setItem('osobola-theme',light?'light':'dark')}catch{}window.dispatchEvent(new CustomEvent('osobola-theme-change',{detail:light}))}}
+      try{applyTheme(localStorage.getItem('osobola-theme')==='light'?'light':'dark')}catch{applyTheme('dark')}
+      themeToggle.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light',true));
+      window.addEventListener('storage',event=>{if(event.key==='osobola-theme')applyTheme(event.newValue==='light'?'light':'dark')});
+      window.addEventListener('osobola-theme-change',event=>applyTheme(event.detail?'light':'dark'));
       const slides=[...document.querySelectorAll('.slide')],stage=document.getElementById('stage'),fill=document.getElementById('progressFill'),counter=document.getElementById('counter'),prev=document.getElementById('prev'),next=document.getElementById('next'),panel=document.getElementById('overviewPanel'),grid=document.getElementById('overviewGrid'),narrationPanel=document.getElementById('narrationPanel'),narrationText=document.getElementById('narrationText'),narrationCount=document.getElementById('narrationCount'),narrationToggle=document.getElementById('narrationToggle');
       let current=0;
       const names=['Welcome to Osobola','You belong here','Your AI toolkit','How you’ll learn','Why this course matters','Skills you’ll gain','A practical goal','You can do this','Get ready for the next lesson'];
