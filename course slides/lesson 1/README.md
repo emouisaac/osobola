@@ -1,4 +1,4 @@
-# Osobola Course 1 - Welcome
+# Osobola Lesson 1 - Welcome
 
 Open `index.html` in a modern browser to present the introduction. The deck is self-contained and works offline.
 
