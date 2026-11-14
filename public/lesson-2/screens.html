@@ -26,8 +26,9 @@
     h1{margin:0;font-size:clamp(25px,4vw,42px);line-height:1.08;letter-spacing:-.05em}
     .hint{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
     .player{position:relative;overflow:hidden;border:1px solid #ffffff28;border-radius:18px;background:#05070c;box-shadow:0 30px 80px #0008;aspect-ratio:16/9}
-    .player:fullscreen{width:100vw;height:100vh;aspect-ratio:auto;border:0;border-radius:0;display:grid;place-items:center}
-    .player:fullscreen video{width:100%;height:100%;object-fit:contain}
+    body.fullscreen-active{overflow:hidden}
+    .player.fullscreen-mode{position:fixed;inset:0;z-index:20;width:100vw;height:100dvh;aspect-ratio:auto;border:0;border-radius:0;display:grid;place-items:center;box-shadow:none}
+    .player.fullscreen-mode video{width:100%;height:100%;object-fit:contain}
     video{display:block;width:100%;height:100%;object-fit:contain;background:#05070c}
     .play-overlay{position:absolute;inset:0;display:grid;place-items:center;border:0;background:linear-gradient(180deg,#00000008,#00000030);cursor:pointer;transition:opacity .2s,visibility .2s}
     .play-overlay[hidden]{opacity:0;visibility:hidden;pointer-events:none}
@@ -39,6 +40,7 @@
     .play-button:hover{filter:brightness(1.08)}
     .fullscreen-button{min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:#ffffff08;color:var(--ink);cursor:pointer}
     .fullscreen-button:hover{border-color:#c2f9707a;color:var(--lime)}
+    .fullscreen-button.fullscreen-exit{position:fixed;top:14px;right:14px;z-index:30;background:#101722e8;border-color:#ffffff40}.fullscreen-button[aria-pressed="true"]{color:var(--lime)}
     .status{margin:0;color:var(--muted);font-size:12px}
     .error{color:#ffaaa2}
     footer{display:flex;align-items:center;justify-content:center;border-top:1px solid var(--line);color:#747e90;font-size:11px}
@@ -54,7 +56,7 @@
     <main>
       <div class="intro"><div><p class="eyebrow">Lesson 2 video</p><h1>Prepare your coding tools</h1></div><p class="hint">Press play to watch the lesson video.</p></div>
       <div class="player">
-        <video id="lessonVideo" playsinline preload="metadata" controls aria-label="Lesson 2 video">
+        <video id="lessonVideo" playsinline preload="metadata" controls controlslist="nofullscreen" aria-label="Lesson 2 video">
           <source src="video/lesson2.mp4" type="video/mp4">
           Your browser does not support video playback.
         </video>
@@ -81,18 +83,18 @@
     playButton.addEventListener('click', toggleVideo);
     playOverlay.addEventListener('click', toggleVideo);
     fullscreenButton.addEventListener('click', async () => {
-      try {
-        if (document.fullscreenElement) await document.exitFullscreen();
-        else await player.requestFullscreen();
-      } catch {
-        status.textContent = 'Full screen is not available in this browser.';
-        status.classList.add('error');
-      }
+      const active = player.classList.toggle('fullscreen-mode');
+      document.body.classList.toggle('fullscreen-active', active);
+      fullscreenButton.classList.toggle('fullscreen-exit', active);
+      fullscreenButton.setAttribute('aria-label', active ? 'Exit full screen' : 'Enter full screen');\n      fullscreenButton.setAttribute('aria-pressed', String(active));
     });
-    document.addEventListener('fullscreenchange', () => {
-      const active = document.fullscreenElement === player;
-      fullscreenButton.textContent = active ? '⛶ Exit full screen' : '⛶ Full screen';
-      fullscreenButton.setAttribute('aria-label', active ? 'Exit full screen' : 'Enter full screen');
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && player.classList.contains('fullscreen-mode')) {
+        player.classList.remove('fullscreen-mode');
+        document.body.classList.remove('fullscreen-active');
+        fullscreenButton.classList.remove('fullscreen-exit');
+        fullscreenButton.setAttribute('aria-label', 'Enter full screen');\n        fullscreenButton.setAttribute('aria-pressed', 'false');
+      }
     });
     video.addEventListener('play', () => { playButton.textContent = '❚❚ Pause video'; playOverlay.hidden = true; status.textContent = 'Video playing.'; status.classList.remove('error'); });
     video.addEventListener('pause', () => { playButton.textContent = '▶ Play video'; playOverlay.hidden = false; status.textContent = 'Video paused.'; });
